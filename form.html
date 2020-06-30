@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>form</title>
+    </head>
+    <style>
+        .par{
+            color: royalblue;
+            font-size: 36px;
+        }
+    </style>
+    <body>
+        <div id="latihanbin">
+            <img v-bind:src="image" v-bind:style="{width: size+'px'}"> <!-- tipe1 -->
+            <img :src="image" :style="{width: size+'px'}"><!-- tipe2 -->
+            <p :class="paragraf">belajar v-bind</p>
+
+        </div>
+        <hr>
+        <div id="latihanform">
+            <input type="text" v-model="message" placeholder="type message"><br>
+            Pesan Anda adalah {{message}}
+        </div>
+        <hr>
+        <div id="latihanform2">
+            <textarea type="text" v-model="message" placeholder="type message"></textarea><br>
+            Pesan Anda adalah <p style="white-space: pre-line;">{{message}}</p>
+        </div>
+        <hr>
+        <div id="latihanform3">
+            <input type="radio" v-model="gender" value="Male">Male<br>
+            <input type="radio" v-model="gender" value="Female">Female<br>
+            Pesan Anda adalah {{gender}}
+        </div>
+        <hr>
+        <div id="latihanform4">
+            <input type="checkbox" v-model="language" value="PHP">PHP<br>
+            <input type="checkbox" v-model="language" value="Java">Java<br>
+            <input type="checkbox" v-model="language" value="C-Sharp">C-Sharp<br>
+            Pesan Anda adalah {{language}}
+        </div>
+        <div id="latihanform5">
+            <select v-model="city">
+                <option>Jakarta</option>
+                <option>Bogor</option>
+                <option>Depok</option>
+                <option>Tanggerang</option>
+                <option>Bekasi</option>
+                <option>Bandung</option>
+            </select>
+            <br>
+            Pesan Anda adalah {{city}}
+        </div>
+        <hr>
+        <script src="public/js/vue.js"></script>
+        <script src="public/js/apps.js"></script>
+        <script src="public/js/form.js"></script>
+    </body>
+</html>

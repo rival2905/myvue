@@ -1,0 +1,76 @@
+<html> 
+    <head><title>Belajar Vue JS</title></head>
+    <body>
+        <div id="latihan">
+            <!-- 
+                v-text = untuk memasukan text
+                v-html = agar bisa membaca tag html
+             -->
+            <p v-html="a">
+            <p v-html="b">
+            <p v-html="c">
+            <p v-html="d">
+            <p v-html="e">
+        </div> 
+        <hr>
+        <div id="latihanif">
+            <p v-if="tampilkan == 'ok'">{{pesan}}</p>
+            <p v-else="tampilkan">{{pesan2}}</p>
+            
+        </div>
+        <hr>
+        <div id="latihancomp">
+           <p> {{a}} + {{b}} = {{jumlah}} </p> 
+        </div>
+        <hr>
+        <div id="latihanmeth">
+            <p> {{a}} + {{b}} = {{jumlah}} </p> 
+            <button v-on:click="tambah">tambah</button>
+         </div>
+         <hr>
+         <div id="latihanwac">
+             <input type="text" v-model="pesan">{{ keterangan }} {{ pesan }}
+         </div>
+         <hr>
+         <div id="latihanwac2">
+            <input type="password" v-model="password1" placeholder="type password">
+            <input type="password" v-model="password2" placeholder="re-type password"><br>{{ keterangan }}
+
+        </div>
+        <hr>
+        <div id="latihanclik">
+            <button v-on:click="pesan = 'belajar v-on click'">click disini</button><br>
+            {{ pesan }}
+            <input type="text" @keyup.enter="pesan = 'belajar v-on enter'">
+            
+        </div>
+        <hr>
+        <div id="latihanclik2">
+            <button v-on:click="pesan">click disini</button>
+            <button @click="pesan">click disini</button> <!--tipe 2-->
+        </div>
+        <hr>
+        <div id="latihanclik3">
+            <button v-on:click="pesan('Tutor methods with parameter')">click disini</button><br>
+            <input type="text" @keyup.enter="pesan('Tutor methods with parameter di enter')">
+        </div>
+        <hr>
+        <div id="latihanclik4">
+            <input type="text" @keyup.enter="enter" @keyup.esc="esc" @keyup.up="up" @keyup.down="down" @click.left="left" @click.right="right"><br>
+            {{ pesan }}<br>
+            <input type="text" @keyup.ctrl.65="contoh">
+
+        </div>
+        <hr>
+        <div id="latihanarray">
+            <input type="text" name="" v-model="pesan">
+            <button @click="tambah">Tambah data</button>
+           <ul>
+               <!-- <li>{{ hobby[0] }}</li> -->
+               <li v-for="(h,i) in hobby"> <button @click="hapus(i)">x</button> {{h}} </li>
+           </ul>
+        </div>
+        <script src="public/js/vue.js"></script>
+        <script src="public/js/apps.js"></script>
+    </body>
+</html>
